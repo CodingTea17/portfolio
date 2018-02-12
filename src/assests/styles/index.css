@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Lato:400,700');
+
+@@font-face {
+  font-family: 'Lato', sans-serif;
+  font-family: 'Bungee Inline', cursive;
+}
+
 body {
+  height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #404C52;
 }
