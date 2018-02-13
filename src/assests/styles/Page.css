@@ -2,15 +2,11 @@
   background-color: #FBFEFF;
   width: auto;
   height: 100vh;
-  box-shadow: 0 0 5px 10px #313D43;
 }
 
 @media screen and (min-width: 720px) {
   .Page {
     margin: 30px;
+    box-shadow: 0 0 5px 10px #313D43;
   }
-}
-
-.small {
-
 }

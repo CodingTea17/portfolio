@@ -14,6 +14,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar>
+          <Media
+            query="(max-width: 719px)"
+            render={() => <i class="fas fa-bars fa-4x" style={{color: "white", padding: "7px"}}></i>}
+          />
           <NavItem title={"Dawson M."} />
           <NavItem title={"About Me"} />
         </NavBar>
