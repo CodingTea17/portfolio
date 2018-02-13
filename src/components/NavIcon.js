@@ -21,17 +21,22 @@ class NavIcon extends Component {
           query="(max-width: 719px)"
           render={() => {
             return (
-              this.state.isMenuOpen ? <i
-                                        onClick={this.hamburgerPress}
-                                        className="fas fa-times fa-4x"
-                                        style={{color: "#FFCA28", padding: "7px"}}
-                                      ></i>
-                                      :
-                                      <i
-                                        onClick={this.hamburgerPress}
-                                        className="fas fa-bars fa-4x"
-                                        style={{color: "#FFCA28", padding: "7px"}}
-                                      ></i>
+              <div>
+                {
+                  this.state.isMenuOpen ?
+                                        <i
+                                          onClick={this.hamburgerPress}
+                                          className="fas fa-times fa-4x"
+                                          style={{color: "#FFCA28", padding: "7px"}}
+                                        ></i>
+                                        :
+                                        <i
+                                          onClick={this.hamburgerPress}
+                                          className="fas fa-bars fa-4x"
+                                          style={{color: "#FFCA28", padding: "7px"}}
+                                        ></i>
+                }
+              </div>
             )
           }}
         />

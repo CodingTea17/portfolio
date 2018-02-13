@@ -1,0 +1,12 @@
+.MobileNavLink {
+  height: 80px;
+  width: 100%;
+  color: white;
+  font-family: 'Bungee Outline', cursive;
+  font-size: 60px;
+  padding-left: 8px;
+}
+
+.MobileNavLink:hover {
+  background-color: #273339;
+}
