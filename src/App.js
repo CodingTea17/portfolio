@@ -7,23 +7,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      loading: true
     }
   }
+
+  componentDidMount() {
+    this.setState({loading: false});
+  }
+
   render() {
-    return (
-      <div className="App">
-        <NavBar>
-          <Media
-            query="(max-width: 719px)"
-            render={() => <i class="fas fa-bars fa-4x" style={{color: "white", padding: "7px"}}></i>}
-          />
-          <NavItem title={"Dawson M."} />
-          <NavItem title={"About Me"} />
-        </NavBar>
-        <Page />
-      </div>
-    );
+    if (this.state.loading) {
+      return <div><i className="fas fa-cog fa-spin"></i></div>;
+    }
+    else {
+      return (
+        <div className="App">
+          <NavBar>
+            <Media
+              query="(max-width: 719px)"
+              render={() => {
+                return (
+                  <i className="fas fa-bars fa-4x" style={{color: "#FFCA28", padding: "7px"}}></i>
+                )
+              }}
+            />
+            <NavItem title={"Dawson M."} />
+            <NavItem title={"About Me"} />
+          </NavBar>
+          <Page />
+        </div>
+      );
+    }
   }
 }
 
