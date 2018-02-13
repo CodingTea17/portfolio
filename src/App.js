@@ -12,12 +12,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({loading: false});
+    setTimeout(() => this.setState({loading: false}), 3000);
   }
 
   render() {
     if (this.state.loading) {
-      return <div><i className="fas fa-cog fa-spin"></i></div>;
+      return <div><i className="fas fa-cog fa-spin fa-10x" style={{ color: "white", padding: "7px" }}></i></div>;
     }
     else {
       return (
