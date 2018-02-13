@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import Media from "react-media";
-import { NavBar, NavItem, Page } from './components';
+import { NavBar, NavItem, Page, NavIcon } from './components';
 import './assests/styles/App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
-      isMenuOpen: false
+      isLoading: true
     }
   }
 
   componentDidMount() {
     setTimeout(() => this.setState({ isLoading: false }), 2000);
-  }
-
-  hamburgerPress = () => {
-    this.setState({ isMenuOpen: !this.state.isMenuOpen })
   }
 
   render() {
@@ -32,24 +26,7 @@ class App extends Component {
       return (
         <div className="App">
           <NavBar>
-            <Media
-              query="(max-width: 719px)"
-              render={() => {
-                return (
-                  this.state.isMenuOpen ? <i
-                                            onClick={this.hamburgerPress}
-                                            className="fas fa-times fa-4x"
-                                            style={{color: "#FFCA28", padding: "7px"}}
-                                          ></i>
-                                          :
-                                          <i
-                                            onClick={this.hamburgerPress}
-                                            className="fas fa-bars fa-4x"
-                                            style={{color: "#FFCA28", padding: "7px"}}
-                                          ></i>
-                )
-              }}
-            />
+            <NavIcon />
             <NavItem title={"Dawson M."} />
             <NavItem title={"About Me"} />
           </NavBar>
