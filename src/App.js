@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   hamburgerPress = () => {
-    this.setState({ isMenuOpen: true })
+    this.setState({ isMenuOpen: !this.state.isMenuOpen })
   }
 
   render() {
@@ -37,6 +37,7 @@ class App extends Component {
               render={() => {
                 return (
                   this.state.isMenuOpen ? <i
+                                            onClick={this.hamburgerPress}
                                             className="fas fa-times fa-4x"
                                             style={{color: "#FFCA28", padding: "7px"}}
                                           ></i>
