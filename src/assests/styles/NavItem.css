@@ -2,15 +2,22 @@
   background-color: #0D191F;
   color: white;
   height: 74px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
   align-items: center;
-  font-size: 36px;
-  font-family: 'Bungee Inline';
+  font-size: 40px;
+  font-family: 'Bungee Outline';
+  font-weight: 700;
   border-bottom: 6px solid #FFCA28;
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .NavItem {
+    display: flex;
+  }
 }
 
 .NavItem:hover {
