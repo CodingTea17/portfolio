@@ -7,17 +7,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      isLoading: true,
+      isMenuOpen: false
     }
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({loading: false}), 3000);
+    setTimeout(() => this.setState({ isLoading: false }), 2000);
+  }
+
+  hamburgerPress = () => {
+    this.setState({ isMenuOpen: true })
   }
 
   render() {
-    if (this.state.loading) {
-      return <div><i className="fas fa-cog fa-spin fa-10x" style={{ color: "white", padding: "7px" }}></i></div>;
+    if (this.state.isLoading) {
+      return (
+        <div>
+          <i className="fas fa-cog fa-spin fa-10x" style={{ color: "white", padding: "7px" }}></i>
+        </div>
+      );
     }
     else {
       return (
@@ -27,7 +36,16 @@ class App extends Component {
               query="(max-width: 719px)"
               render={() => {
                 return (
-                  <i className="fas fa-bars fa-4x" style={{color: "#FFCA28", padding: "7px"}}></i>
+                  this.state.isMenuOpen ? <i
+                                            className="fas fa-times fa-4x"
+                                            style={{color: "#FFCA28", padding: "7px"}}
+                                          ></i>
+                                          :
+                                          <i
+                                            onClick={this.hamburgerPress}
+                                            className="fas fa-bars fa-4x"
+                                            style={{color: "#FFCA28", padding: "7px"}}
+                                          ></i>
                 )
               }}
             />
