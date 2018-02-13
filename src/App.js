@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavBar, NavItem, Page, NavIcon, MobileNavMenu, MobileNavLink } from './components';
+import { NavBar, NavItem, Page, NavIcon, MobileNavLink } from './components';
 import './assests/styles/App.css';
 
 class App extends Component {
@@ -19,6 +19,17 @@ class App extends Component {
     this.setState({ isMenuOpen: !this.state.isMenuOpen})
   }
 
+  renderMobileMenu = () => {
+    if (this.state.isMenuOpen) {
+      return (
+        <div>
+          <MobileNavLink title={"About Me"}/>
+          <MobileNavLink title={"Projects"}/>
+        </div>
+      );
+    };
+  };
+
   render() {
     if (this.state.isLoading) {
       return (
@@ -35,14 +46,8 @@ class App extends Component {
             <NavItem title={"Dawson M."} />
             <NavItem title={"About Me"} />
           </NavBar>
-          {
-            this.state.isMenuOpen ? <MobileNavMenu>
-                                      <MobileNavLink title={"About Me"}/>
-                                      <MobileNavLink title={"Projects"}/>
-                                    </MobileNavMenu>
-                                  :
-                                  <Page />
-          }
+          {this.renderMobileMenu()}
+          <Page />
         </div>
       );
     }

@@ -4,7 +4,9 @@
   color: white;
   font-family: 'Bungee Outline', cursive;
   font-size: 60px;
-  padding-left: 8px;
+  font-weight: 700;
+  background-color: #0D191F;
+  padding: 16px 0px 8px 8px;
 }
 
 .MobileNavLink:hover {
