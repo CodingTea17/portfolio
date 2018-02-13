@@ -10,7 +10,8 @@ class NavIcon extends Component {
   }
 
   hamburgerPress = () => {
-    this.setState({ isMenuOpen: !this.state.isMenuOpen })
+    this.setState({ isMenuOpen: !this.state.isMenuOpen });
+    this.props.menuPress();
   }
 
   render() {

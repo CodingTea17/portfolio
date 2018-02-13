@@ -6,12 +6,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true
+      isLoading: true,
+      isMenuOpen: false
     }
   }
 
   componentDidMount() {
     setTimeout(() => this.setState({ isLoading: false }), 2000);
+  }
+
+  menuPress = () => {
+    console.log("cool beans");
+    this.setState({ isMenuOpen: !this.state.isMenuOpen})
   }
 
   render() {
@@ -26,7 +32,7 @@ class App extends Component {
       return (
         <div className="App">
           <NavBar>
-            <NavIcon />
+            <NavIcon menuPress={this.menuPress} />
             <NavItem title={"Dawson M."} />
             <NavItem title={"About Me"} />
           </NavBar>
